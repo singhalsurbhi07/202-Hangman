@@ -105,45 +105,45 @@ public class Hangman extends World
 
     public void addQRow(int x,int y)
     {
-//         Q q = new Q();
-//         addObject(q,x, y);
-//         q.setLocation(x, y);
-// 
-//         W w = new W();
-//         addObject(w, x+60, y);
-//         w.setLocation(x+60, y);
-// 
-//         E e = new E();
-//         addObject(e, x+60*2, y);
-//         e.setLocation(x+60*2, y);
-// 
-//         R r = new R();
-//         addObject(r,x+60*3, y);
-//         r.setLocation(x+60*3,y);
-// 
-//         T t = new T();
-//         addObject(t, x+60*4, y);
-//         t.setLocation(x+60*4, y);
-// 
-//         Y yy = new Y();
-//         addObject(yy,x+60*5,y);
-//         yy.setLocation(x+60*5,y);
-// 
-//         U u = new U();
-//         addObject(u, x+60*6,y);
-//         u.setLocation(x+60*6,y);
-// 
-//         I i = new I();
-//         addObject(i,x+60*7,y);
-//         i.setLocation(x+60*7,y);
-// 
-//         O o = new O();
-//         addObject(o,x+60*8,y);
-//         o.setLocation(x+60*8,y);
-// 
-//         P p = new P();
-//         addObject(p,x+60*9,y);
-//         p.setLocation(x+60*9,y);
+        Q q = new Q();
+        addObject(q,x, y);
+        q.setLocation(x, y);
+
+        W w = new W();
+        addObject(w, x+60, y);
+        w.setLocation(x+60, y);
+
+        E e = new E();
+        addObject(e, x+60*2, y);
+        e.setLocation(x+60*2, y);
+
+        R r = new R();
+        addObject(r,x+60*3, y);
+        r.setLocation(x+60*3,y);
+
+        T t = new T();
+        addObject(t, x+60*4, y);
+        t.setLocation(x+60*4, y);
+
+        Y yy = new Y();
+        addObject(yy,x+60*5,y);
+        yy.setLocation(x+60*5,y);
+
+        U u = new U();
+        addObject(u, x+60*6,y);
+        u.setLocation(x+60*6,y);
+
+        I i = new I();
+        addObject(i,x+60*7,y);
+        i.setLocation(x+60*7,y);
+
+        O o = new O();
+        addObject(o,x+60*8,y);
+        o.setLocation(x+60*8,y);
+
+        P p = new P();
+        addObject(p,x+60*9,y);
+        p.setLocation(x+60*9,y);
     }
 
     
@@ -184,33 +184,33 @@ public class Hangman extends World
 
     public void addZRow(int x,int y)
     {
-//         Z z = new Z();
-//         addObject(z,x, y);
-//         z.setLocation(x, y);
-// 
-//         X xx = new X();
-//         addObject(xx, x+60, y);
-//         xx.setLocation(x+60, y);
-// 
-//         C c = new C();
-//         addObject(c, x+60*2, y);
-//         c.setLocation(x+60*2, y);
-// 
-//         V v = new V();
-//         addObject(v,x+60*3, y);
-//         v.setLocation(x+60*3,y);
-// 
-//         B b = new B();
-//         addObject(b, x+60*4, y);
-//         b.setLocation(x+60*4, y);
-// 
-//         N n = new N();
-//         addObject(n,x+60*5,y);
-//         n.setLocation(x+60*5,y);
-// 
-//         M m = new M();
-//         addObject(m, x+60*6,y);
-//         m.setLocation(x+60*6,y);
+        Z z = new Z();
+        addObject(z,x, y);
+        z.setLocation(x, y);
+
+        X xx = new X();
+        addObject(xx, x+60, y);
+        xx.setLocation(x+60, y);
+
+        C c = new C();
+        addObject(c, x+60*2, y);
+        c.setLocation(x+60*2, y);
+
+        V v = new V();
+        addObject(v,x+60*3, y);
+        v.setLocation(x+60*3,y);
+
+        B b = new B();
+        addObject(b, x+60*4, y);
+        b.setLocation(x+60*4, y);
+
+        N n = new N();
+        addObject(n,x+60*5,y);
+        n.setLocation(x+60*5,y);
+
+        M m = new M();
+        addObject(m, x+60*6,y);
+        m.setLocation(x+60*6,y);
 
     }
 
