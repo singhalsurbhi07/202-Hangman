@@ -27,4 +27,8 @@ public class WordToGuess extends Actor
         System.out.println("User guessed "+ alphabetGuessed);
     }
     
+    public void setAlphabetGuessed(String alphabet, World world) {
+        
+    }
+    
 }

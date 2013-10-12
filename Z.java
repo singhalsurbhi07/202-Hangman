@@ -21,15 +21,16 @@ public class Z extends VirtualKeyboard
     
    public void act() 
     {
-       Hangman hangman = (Hangman) getWorld();
-       wordtoguess = hangman.getWordToGuess();
+        /* Hangman hangman = (Hangman) getWorld();
+       wordtoguess = hangman.getWordToGuess();*/
+        WordToGuess wordtoguess = new WordToGuess();
       
         
         if(Greenfoot.mouseClicked(this) && !isClick)
         {
            image.setColor(Color.GREEN); 
            image.drawString("Z", x, y);
-           wordtoguess.setAlphabetGuessed("Z");
+           wordtoguess.setAlphabetGuessed("Z",getWorld());
            isClick = true;
         }
 

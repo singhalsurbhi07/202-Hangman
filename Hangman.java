@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Hangman extends World
 {
     int xStart,yStart;
+    int wordLength;
     WordToGuess wordtoguess;
 
     private String word;
@@ -24,7 +25,7 @@ public class Hangman extends World
         this.word = word;
         xStart = 50;
         yStart = 100;
-
+        wordLength = 0;
         createDash();
     }
 
@@ -33,6 +34,27 @@ public class Hangman extends World
         return  wordtoguess;
     }
 
+    private void placeDash ()
+   {
+      int xDash,yDash;
+      xDash = xStart;
+      yDash = yStart;
+       
+      //WordList wordList = new WordList();
+      //word= wordList.getWord();
+      
+      wordLength = word.length();
+      
+      for(int i=0; i<wordLength ; i++)
+      { 
+         Dash dash = new Dash();
+         addObject(dash,xDash,yDash);
+         dash.setLocation(xDash, yDash);
+         xDash+=70;
+      }
+   }
+    
+    
     private void createDash()
     {
         //w = new WordList();
@@ -47,14 +69,7 @@ public class Hangman extends World
         
         System.out.println("The length of the word is " + word.length());
 
-        for(int i = 0;i<word.length();i++)
-        {
-            Dash dash = new Dash();
-            addObject(dash,xDash,yDash);
-            dash.setLocation(xDash, yDash);
-            xDash+=70;
-
-        }
+        placeDash();
 
         addAlphabets(xStart,yStart+150);
 

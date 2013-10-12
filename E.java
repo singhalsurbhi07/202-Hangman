@@ -21,15 +21,16 @@ public class E extends VirtualKeyboard
     
     public void act() 
     {
-       Hangman hangman = (Hangman) getWorld();
-       wordtoguess = hangman.getWordToGuess();
+       /*Hangman hangman = (Hangman) getWorld();
+       wordtoguess = hangman.getWordToGuess();*/
+       WordToGuess wordtoguess = new WordToGuess();
       
         
         if(Greenfoot.mouseClicked(this) && !isClick)
         {
            image.setColor(Color.GREEN); 
            image.drawString("E", x, y);
-           wordtoguess.setAlphabetGuessed("E");
+           wordtoguess.setAlphabetGuessed("E", getWorld());
            isClick = true;
         }
 
