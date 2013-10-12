@@ -32,8 +32,9 @@ public class StartButton extends Actor
                 startScreen.removeObject(selectMessage);
                 
             } else {
-                WordList.clearWord();
+                //WordList.clearWord();
                 Greenfoot.setWorld(new Hangman(word));
+                //Greenfoot.setWorld(new Hangman());
             }
         }
     }    

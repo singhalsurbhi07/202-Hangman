@@ -26,12 +26,12 @@ public class Hangman extends World
         xStart = 50;
         yStart = 100;
         wordLength = 0;
-        createDash();
+        createHangmanBoard();
     }
 
-    public  WordToGuess getWordToGuess()
+    public  String getWordToGuess()
     {
-        return  wordtoguess;
+        return  word;
     }
 
     private void placeDash ()
@@ -39,10 +39,8 @@ public class Hangman extends World
       int xDash,yDash;
       xDash = xStart;
       yDash = yStart;
-       
-      //WordList wordList = new WordList();
-      //word= wordList.getWord();
-      
+         
+           
       wordLength = word.length();
       
       for(int i=0; i<wordLength ; i++)
@@ -55,7 +53,7 @@ public class Hangman extends World
    }
     
     
-    private void createDash()
+    private void createHangmanBoard()
     {
         //w = new WordList();
 
@@ -76,12 +74,12 @@ public class Hangman extends World
         Title title = new Title();
         addObject(title, 132, 52);
         title.setLocation(114, 81);
-        wordtoguess = new WordToGuess();
+       /* wordtoguess = new WordToGuess();
         addObject(wordtoguess, 661, 77);
         wordtoguess.setLocation(609, 151);
 
         wordtoguess.setLocation(862, 217);
-        wordtoguess.setLocation(844, 224);
+        wordtoguess.setLocation(844, 224);*/
     }
 
     public void addAlphabets(int x, int y) {

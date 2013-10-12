@@ -19,17 +19,16 @@ public class L extends VirtualKeyboard
       setImage(image); 
     }
     
-    public void act() 
-    {
-       Hangman hangman = (Hangman) getWorld();
-       wordtoguess = hangman.getWordToGuess();
-      
+    public void act() {
+    /* Hangman hangman = (Hangman) getWorld();
+       wordtoguess = hangman.getWordToGuess();*/
+        WordToGuess wordtoguess = new WordToGuess();
         
         if(Greenfoot.mouseClicked(this) && !isClick)
         {
            image.setColor(Color.GREEN); 
            image.drawString("L", x, y);
-           wordtoguess.setAlphabetGuessed("L");
+           wordtoguess.setAlphabetGuessed("L",getWorld());
            isClick = true;
         }
 

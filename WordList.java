@@ -20,6 +20,7 @@ public class WordList extends Actor
     //Added to pass the category
     public WordList(String category){
         word = getWordFromDB(category);
+       //word ="ELEPHANT";
     }
 
     private int getRandomNo(){
@@ -91,7 +92,7 @@ public class WordList extends Actor
     }
 
     public static String getWord(){
-        
+       System.out.println("wordlist word = "+word); 
         return word;
     }
 
