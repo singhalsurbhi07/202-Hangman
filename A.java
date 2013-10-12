@@ -12,7 +12,7 @@ public class A extends VirtualKeyboard
      * Act - do whatever the A wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public A()
+   public A()
     {
       image.drawString("A", x, y);
       gi.drawImage(image,0,0); 
@@ -21,6 +21,17 @@ public class A extends VirtualKeyboard
     
     public void act() 
     {
-        // Add your action code here.
+       Hangman hangman = (Hangman) getWorld();
+       wordtoguess = hangman.getWordToGuess();
+      
+        
+        if(Greenfoot.mouseClicked(this) && !isClick)
+        {
+           image.setColor(Color.GREEN); 
+           image.drawString("A", x, y);
+           wordtoguess.setAlphabetGuessed("A");
+           isClick = true;
+        }
+
     }    
 }

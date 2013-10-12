@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.awt.*;
 
 /**
  * Write a description of class J here.
@@ -18,8 +19,20 @@ public class J extends VirtualKeyboard
       gi.drawImage(image,0,0); 
       setImage(image); 
     }
+    
     public void act() 
     {
-        // Add your action code here.
-    }    
+       Hangman hangman = (Hangman) getWorld();
+       wordtoguess = hangman.getWordToGuess();
+      
+        
+        if(Greenfoot.mouseClicked(this) && !isClick)
+        {
+           image.setColor(Color.GREEN); 
+           image.drawString("J", x, y);
+           wordtoguess.setAlphabetGuessed("J");
+           isClick = true;
+        }
+
+    } 
 }

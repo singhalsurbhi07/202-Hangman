@@ -15,7 +15,8 @@ public class VirtualKeyboard extends Actor
     public final int y = 34;
     GreenfootImage gi = getImage();
     GreenfootImage image;
-    
+    WordToGuess wordtoguess; 
+    boolean isClick = false;
     /**
      * Act - do whatever the VirtualKeyboard wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -40,6 +41,7 @@ public class VirtualKeyboard extends Actor
     
     public void act() 
     {
-        // Add your action code here.
+        
+      
     }    
 }

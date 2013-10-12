@@ -1,8 +1,18 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Hangman()
-comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Hangman.\n\ \n
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Hangman.\r\n\ \r\n
 comment1.params=
-comment1.target=void\ prepare()
-comment1.text=\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\ That\ is\:\ create\ the\ initial\n\ objects\ and\ add\ them\ to\ the\ world.\n
-numComments=2
+comment1.target=WordToGuess\ getWordToGuess()
+comment1.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\ That\ is\:\ create\ the\ initial\r\n\ objects\ and\ add\ them\ to\ the\ world.\r\n
+comment2.params=
+comment2.target=void\ prepare()
+comment3.params=x\ y
+comment3.target=void\ addAlphabets(int,\ int)
+comment4.params=x\ y
+comment4.target=void\ addQRow(int,\ int)
+comment5.params=x\ y
+comment5.target=void\ addARow(int,\ int)
+comment6.params=x\ y
+comment6.target=void\ addZRow(int,\ int)
+numComments=7

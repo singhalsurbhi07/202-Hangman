@@ -9,6 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Hangman extends World
 {
 
+    int xStart,yStart;
+    WordToGuess wordtoguess;
     /**
      * Constructor for objects of class Hangman.
      * 
@@ -16,8 +18,9 @@ public class Hangman extends World
     public Hangman()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
-
+        super(1000, 400, 1); 
+        xStart = 50;
+        yStart = 100;
         prepare();
     }
 
@@ -25,15 +28,18 @@ public class Hangman extends World
      * Prepare the world for the start of the program. That is: create the initial
      * objects and add them to the world.
      */
+     public  WordToGuess getWordToGuess()
+     {
+       return  wordtoguess;
+     }
+
     private void prepare()
     {
         int xDash,yDash;
-        xDash = 50;
-        yDash = 99;
-        
-        int xARow,yARow;
-        xARow = 50;
-        yARow = 210; 
+        xDash = xStart;
+        yDash = yStart;
+
+        setPaintOrder(VirtualKeyboard.class,ScoreCard.class,Title.class);
 
         for(int i = 0;i<4;i++)
         {
@@ -43,37 +49,149 @@ public class Hangman extends World
             xDash+=70;
         }
 
+        addAlphabets(xStart,yStart+150);
+
+        Title title = new Title();
+        addObject(title, 132, 52);
+        title.setLocation(114, 81);
+        wordtoguess = new WordToGuess();
+        addObject(wordtoguess, 661, 77);
+        wordtoguess.setLocation(609, 151);
+
+        wordtoguess.setLocation(862, 217);
+        wordtoguess.setLocation(844, 224);
+    }
+    
+    public void addAlphabets(int x, int y)
+    {
+        int xQRow,yQRow;
+        xQRow = x;
+        yQRow = y; 
+        
+        int xARow, yARow;
+        xARow = x+60;
+        yARow = y+60; 
+        
+        int xZRow,yZRow;
+        xZRow = 2*x + x/2 + 10;
+        yZRow = y+120;
+        
+        addQRow(xQRow,yQRow);
+        addARow(xARow,yARow);
+        addZRow(xZRow,yZRow);
+
+    }
+    
+    
+    public void addQRow(int x,int y)
+    {
+        Q q = new Q();
+        addObject(q,x, y);
+        q.setLocation(x, y);
+
+        W w = new W();
+        addObject(w, x+60, y);
+        w.setLocation(x+60, y);
+
+        E e = new E();
+        addObject(e, x+60*2, y);
+        e.setLocation(x+60*2, y);
+
+        R r = new R();
+        addObject(r,x+60*3, y);
+        r.setLocation(x+60*3,y);
+
+        T t = new T();
+        addObject(t, x+60*4, y);
+        t.setLocation(x+60*4, y);
+
+        Y yy = new Y();
+        addObject(yy,x+60*5,y);
+        yy.setLocation(x+60*5,y);
+
+        U u = new U();
+        addObject(u, x+60*6,y);
+        u.setLocation(x+60*6,y);
+
+        I i = new I();
+        addObject(i,x+60*7,y);
+        i.setLocation(x+60*7,y);
+        
+        O o = new O();
+        addObject(o,x+60*8,y);
+        o.setLocation(x+60*8,y);
+        
+        P p = new P();
+        addObject(p,x+60*9,y);
+        p.setLocation(x+60*9,y);
+    }
+    
+    
+    
+    public void addARow(int x,int y)
+    {
         A a = new A();
-        addObject(a,xARow, yARow);
-        a.setLocation(xARow, yARow);
+        addObject(a,x, y);
+        a.setLocation(x, y);
 
         S s = new S();
-        addObject(s, xARow+60, yARow);
-        s.setLocation(xARow+60, yARow);
+        addObject(s, x+60, y);
+        s.setLocation(x+60, y);
 
         D d = new D();
-        addObject(d, xARow+60*2, yARow);
-        d.setLocation(xARow+60*2, yARow);
+        addObject(d, x+60*2, y);
+        d.setLocation(x+60*2, y);
 
         F f = new F();
-        addObject(f,xARow+60*3, yARow);
-        f.setLocation(xARow+60*3,yARow);
+        addObject(f,x+60*3, y);
+        f.setLocation(x+60*3,y);
 
         H h = new H();
-        addObject(h, xARow+60*4, yARow);
-        h.setLocation(xARow+60*4, yARow);
+        addObject(h, x+60*4, y);
+        h.setLocation(x+60*4, y);
 
         J j = new J();
-        addObject(j,xARow+60*5,yARow);
-        j.setLocation(xARow+60*5,yARow);
+        addObject(j,x+60*5,y);
+        j.setLocation(x+60*5,y);
 
         K k = new K();
-        addObject(k, xARow+60*6,yARow);
-        k.setLocation(xARow+60*6,yARow);
+        addObject(k, x+60*6,y);
+        k.setLocation(x+60*6,y);
 
         L l = new L();
-        addObject(l,xARow+60*7,yARow);
-        l.setLocation(xARow+60*7,yARow);
+        addObject(l,x+60*7,y);
+        l.setLocation(x+60*7,y);
+    }
+    
+     public void addZRow(int x,int y)
+    {
+        Z z = new Z();
+        addObject(z,x, y);
+        z.setLocation(x, y);
+
+        X xx = new X();
+        addObject(xx, x+60, y);
+        xx.setLocation(x+60, y);
+
+        C c = new C();
+        addObject(c, x+60*2, y);
+        c.setLocation(x+60*2, y);
+
+        V v = new V();
+        addObject(v,x+60*3, y);
+        v.setLocation(x+60*3,y);
+
+        B b = new B();
+        addObject(b, x+60*4, y);
+        b.setLocation(x+60*4, y);
+
+        N n = new N();
+        addObject(n,x+60*5,y);
+        n.setLocation(x+60*5,y);
+
+        M m = new M();
+        addObject(m, x+60*6,y);
+        m.setLocation(x+60*6,y);
 
     }
 }
