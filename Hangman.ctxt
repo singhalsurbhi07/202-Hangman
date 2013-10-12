@@ -1,18 +1,21 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Hangman()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Hangman.\r\n\ \r\n
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Hangman.\n\ \n
 comment1.params=
-comment1.target=WordToGuess\ getWordToGuess()
-comment1.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\ That\ is\:\ create\ the\ initial\r\n\ objects\ and\ add\ them\ to\ the\ world.\r\n
+comment1.target=void\ placeDash()
 comment2.params=
-comment2.target=void\ prepare()
-comment3.params=x\ y
-comment3.target=void\ addAlphabets(int,\ int)
+comment2.target=WordToGuess\ getWordToGuess()
+comment2.text=\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\ That\ is\:\ create\ the\ initial\n\ objects\ and\ add\ them\ to\ the\ world.\n
+comment3.params=
+comment3.target=void\ prepare()
+comment3.text=\ public\ void\ placeGuessedAlphabet(String\ alphabet,\ int[]\ arr,\ int\ size){\n\ \ \ \ \ \ \ \ \ int\ xAlpha,\ yAlpha,\ j;\n\ \ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ \ xAlpha\ \=\ xStart;\n\ \ \ \ \ \ \ \ \ yAlpha\ \=\ yStart\ ;\n\ \ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ \ j\=0;\n\ \ \ \ \ \ \ \ \ System.out.println("hello");\n\ \ \ \ \ \ \ \ \ for(int\ i\=0;\ (i<wordLength)&&(size\ >\ 0);\ i++)\n\ \ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ \ \ \ if(arr[j]\=\=\ i){\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println("inside\ draw");\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Message\ message\ \=\ new\ Message(alphabet);\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ World\ world\ \=\ getWorld();\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ world.addObject(message,\ xAlpha,yAlpha);\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j++;\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ size--;\n\ \ \ \ \ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ \ \ \ \ \ xAlpha+\=70;\n\ \ \ \ \ \ \ \ \ }\n}
 comment4.params=x\ y
-comment4.target=void\ addQRow(int,\ int)
+comment4.target=void\ addAlphabets(int,\ int)
 comment5.params=x\ y
-comment5.target=void\ addARow(int,\ int)
+comment5.target=void\ addQRow(int,\ int)
 comment6.params=x\ y
-comment6.target=void\ addZRow(int,\ int)
-numComments=7
+comment6.target=void\ addARow(int,\ int)
+comment7.params=x\ y
+comment7.target=void\ addZRow(int,\ int)
+numComments=8

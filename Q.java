@@ -20,16 +20,16 @@ public class Q extends VirtualKeyboard
     }
     
     public void act() 
-    {
-       Hangman hangman = (Hangman) getWorld();
-       wordtoguess = hangman.getWordToGuess();
+    { /* Hangman hangman = (Hangman) getWorld();
+       wordtoguess = hangman.getWordToGuess();*/
+        WordToGuess wordtoguess = new WordToGuess();
       
         
         if(Greenfoot.mouseClicked(this) && !isClick)
         {
            image.setColor(Color.GREEN); 
            image.drawString("Q", x, y);
-           wordtoguess.setAlphabetGuessed("Q");
+           wordtoguess.setAlphabetGuessed("Q",getWorld());
            isClick = true;
         }
 

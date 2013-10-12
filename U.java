@@ -20,16 +20,15 @@ public class U extends VirtualKeyboard
     }
     
     public void act() 
-    {
-       Hangman hangman = (Hangman) getWorld();
-       wordtoguess = hangman.getWordToGuess();
-      
+    { /* Hangman hangman = (Hangman) getWorld();
+       wordtoguess = hangman.getWordToGuess();*/
+        WordToGuess wordtoguess = new WordToGuess();
         
         if(Greenfoot.mouseClicked(this) && !isClick)
         {
            image.setColor(Color.GREEN); 
            image.drawString("U", x, y);
-           wordtoguess.setAlphabetGuessed("U");
+           wordtoguess.setAlphabetGuessed("U",getWorld());
            isClick = true;
         }
 

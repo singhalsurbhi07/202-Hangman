@@ -15,7 +15,8 @@ public class WordList extends Actor
     private String dbName = "WordsSet";
     
     public WordList(){
-        word=getWordFromDB();    
+        //word=getWordFromDB();    
+        word="CAT";
     }
     
     private int getRandomNo(){

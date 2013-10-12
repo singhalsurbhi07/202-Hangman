@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.lang.*;
+import java.awt.*;
 /**
  * Write a description of class Hangman here.
  * 
@@ -10,6 +11,8 @@ public class Hangman extends World
 {
 
     int xStart,yStart;
+    String word;
+    int wordLength;
     WordToGuess wordtoguess;
     /**
      * Constructor for objects of class Hangman.
@@ -21,8 +24,30 @@ public class Hangman extends World
         super(1000, 400, 1); 
         xStart = 50;
         yStart = 100;
+        wordLength =0;
         prepare();
     }
+    
+   private void placeDash ()
+   {
+      int xDash,yDash;
+      xDash = xStart;
+      yDash = yStart;
+       
+      WordList wordList = new WordList();
+      word= wordList.getWord();
+      
+      wordLength = word.length();
+      
+      for(int i=0; i<wordLength ; i++)
+      { 
+         Dash dash = new Dash();
+         addObject(dash,xDash,yDash);
+         dash.setLocation(xDash, yDash);
+         xDash+=70;
+      }
+   }
+  
 
     /**
      * Prepare the world for the start of the program. That is: create the initial
@@ -32,24 +57,39 @@ public class Hangman extends World
      {
        return  wordtoguess;
      }
+     
+    /* public void placeGuessedAlphabet(String alphabet, int[] arr, int size){
+         int xAlpha, yAlpha, j;
+         
+         xAlpha = xStart;
+         yAlpha = yStart ;
+         
+         j=0;
+         System.out.println("hello");
+         for(int i=0; (i<wordLength)&&(size > 0); i++)
+         {
+             if(arr[j]== i){
+                
+                System.out.println("inside draw");
+                Message message = new Message(alphabet);
+                World world = getWorld();
+                world.addObject(message, xAlpha,yAlpha);
+                j++;
+                size--;
+            }
+                
+             xAlpha+=70;
+         }
+     }*/
 
     private void prepare()
     {
-        int xDash,yDash;
-        xDash = xStart;
-        yDash = yStart;
+       
+       setPaintOrder(VirtualKeyboard.class,ScoreCard.class,Title.class);
 
-        setPaintOrder(VirtualKeyboard.class,ScoreCard.class,Title.class);
+       placeDash();       
 
-        for(int i = 0;i<4;i++)
-        {
-            Dash dash = new Dash();
-            addObject(dash,xDash,yDash);
-            dash.setLocation(xDash, yDash);
-            xDash+=70;
-        }
-
-        addAlphabets(xStart,yStart+150);
+       addAlphabets(xStart,yStart+150);
 
         Title title = new Title();
         addObject(title, 132, 52);
@@ -64,6 +104,7 @@ public class Hangman extends World
     
     public void addAlphabets(int x, int y)
     {
+        
         int xQRow,yQRow;
         xQRow = x;
         yQRow = y; 
@@ -76,11 +117,14 @@ public class Hangman extends World
         xZRow = 2*x + x/2 + 10;
         yZRow = y+120;
         
+        
+        
         addQRow(xQRow,yQRow);
         addARow(xARow,yARow);
         addZRow(xZRow,yZRow);
 
     }
+           
     
     
     public void addQRow(int x,int y)
