@@ -12,19 +12,24 @@ public class WordList extends Actor
 {
     private static String word = null;
     private String dbName = "WordsSet";
+    private static Connection conn;
 
     public WordList(){
-        //word=getWordFromDB();    
+        //word=getWordFromDB();
+        if (conn == null) {
+            conn = getConnect();
+        }
     }
 
     //Added to pass the category
     public WordList(String category){
         word = getWordFromDB(category);
+
         //word ="ELEPHANT";
     }
 
     private int getRandomNo(){
-        Connection conn= getConnect();
+        //Connection conn= getConnect();
         String query = "select count(*) from WordsSet";
         Statement stmt1 = null;
         int finalNo=0;
@@ -61,7 +66,7 @@ public class WordList extends Actor
 
     private String getWordFromDB(String category){
 
-        Connection conn= getConnect();
+        //Connection conn= getConnect();
         Statement stmt = null;
         int serNo= getRandomNo();
         String searchedWord=null;

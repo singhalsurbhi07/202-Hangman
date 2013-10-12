@@ -34,8 +34,8 @@ public class StartButton extends Actor
             } else {
                 //WordList.clearWord();
                 System.out.println("Clicked the Start Button");
-                WordList wordList  = new WordList("Animal");     
-                String word = WordList.getWord();
+                WordList wordList  = animalCategoryButton.getWordList();   
+                String word = wordList.getWord();
                 if (word != null) {
                     Greenfoot.setWorld(new Hangman(word));    
                 } else {
