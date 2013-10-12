@@ -71,12 +71,12 @@ public class WordToGuess extends Actor
         int index =0;
         int size = -1;
         int pos =0;
-            for(int i=index;i< word.length(); i ++){
+            for(int i=pos;i< word.length(); i ++){
 
                 if((index =word.indexOf(alphabet, pos))!= -1){
                     System.out.println("inside if");
                     alphabetPosition[++size]= index;
-                    pos++;
+                    pos=index+1;
                 }
                 else
                     break;
