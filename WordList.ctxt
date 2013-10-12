@@ -11,6 +11,4 @@ comment4.params=category
 comment4.target=java.lang.String\ getWordFromDB(java.lang.String)
 comment5.params=
 comment5.target=java.lang.String\ getWord()
-comment6.params=
-comment6.target=void\ clearWord()
-numComments=7
+numComments=6

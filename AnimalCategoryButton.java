@@ -9,7 +9,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class AnimalCategoryButton extends Actor
 {
     WordList w ;
-   
+    boolean animalBtnClicked;
+    
+    AnimalCategoryButton() {
+        animalBtnClicked = false;
+    }
     
     public void act() 
     {
@@ -17,12 +21,16 @@ public class AnimalCategoryButton extends Actor
             
             System.out.println("Selected Animal Category");
             //Have to send the category name to WordList class
-            w  = new WordList("Animal");           
-            
-            
-            
-                        
-            
+            animalBtnClicked = true;
         }
-    }    
+    } 
+    
+    public boolean isAnimalBtnClicked() {
+        return animalBtnClicked;
+    }
+    
+   
+    
+    
+    
 }

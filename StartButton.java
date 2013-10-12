@@ -9,33 +9,40 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class StartButton extends Actor
 {
     StartScreen startScreen;
+    AnimalCategoryButton animalCategoryButton;
     SelectMessage selectMessage = new SelectMessage();
-   
-    
-    public StartButton(StartScreen startScreen) {
+
+    public StartButton(StartScreen startScreen, AnimalCategoryButton animalCategoryButton) {
         this.startScreen = startScreen;
+        this.animalCategoryButton = animalCategoryButton;
     }
-    
+
     public StartButton() {
-        
+
     }
-    
+
     public void act() 
     {
+
         if(Greenfoot.mouseClicked(this)){
-            System.out.println("Clicked the Start Button");
-            String word = WordList.getWord();
-            if (word == null) {
-                
+
+            if (!animalCategoryButton.isAnimalBtnClicked()) {
+                System.out.println("Not Selected the Animal Category");
                 startScreen.addObject(selectMessage, 420, 230);
                 Greenfoot.delay(60);
                 startScreen.removeObject(selectMessage);
-                
             } else {
                 //WordList.clearWord();
-                Greenfoot.setWorld(new Hangman(word));
-                //Greenfoot.setWorld(new Hangman());
+                System.out.println("Clicked the Start Button");
+                WordList wordList  = new WordList("Animal");     
+                String word = WordList.getWord();
+                if (word != null) {
+                    Greenfoot.setWorld(new Hangman(word));    
+                } else {
+                    // display error message ex db down
+                }
             }
         }
-    }    
-}
+    }
+}    
+

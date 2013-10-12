@@ -20,7 +20,7 @@ public class WordList extends Actor
     //Added to pass the category
     public WordList(String category){
         word = getWordFromDB(category);
-       //word ="ELEPHANT";
+        //word ="ELEPHANT";
     }
 
     private int getRandomNo(){
@@ -60,6 +60,7 @@ public class WordList extends Actor
     }
 
     private String getWordFromDB(String category){
+
         Connection conn= getConnect();
         Statement stmt = null;
         int serNo= getRandomNo();
@@ -88,18 +89,18 @@ public class WordList extends Actor
             }
         }
         System.out.println("The searched word is ::::::::::::: " + searchedWord);
+        
         return  searchedWord; 
     }
 
     public static String getWord(){
-       System.out.println("wordlist word = "+word); 
+        System.out.println("wordlist word = "+word); 
         return word;
     }
 
-    
-    public static void clearWord() {
-        word = null;
-    }
+    //     public static void clearWord() {
+    //         word = null;
+    //     }
     //     public static void main(String args[]){
     //         WordList w=new WordList();
     //         String str=w.getWord();

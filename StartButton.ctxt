@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=startScreen
-comment0.target=StartButton(StartScreen)
+comment0.params=startScreen\ animalCategoryButton
+comment0.target=StartButton(StartScreen,\ AnimalCategoryButton)
 comment1.params=
 comment1.target=StartButton()
 comment2.params=

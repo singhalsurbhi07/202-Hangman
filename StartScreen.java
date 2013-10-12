@@ -29,8 +29,9 @@ public class StartScreen extends World
      */
     private void prepare()
     {
-        addObject(new StartButton(this), 452,350);
-        addObject(new AnimalCategoryButton(), 150, 220);
+        AnimalCategoryButton animalCategoryButton = new AnimalCategoryButton();
+        addObject(new StartButton(this, animalCategoryButton), 452,350);
+        addObject(animalCategoryButton, 150, 220);
     }
 
    
