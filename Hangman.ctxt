@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=word
 comment0.target=Hangman(java.lang.String)
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Hangman.\r\n\ \r\n
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Hangman.\n\ \n
 comment1.params=
 comment1.target=java.lang.String\ getWordToGuess()
 comment2.params=

@@ -88,7 +88,7 @@ public class Hangman extends World
         yQRow = y; 
 
         int xARow, yARow;
-        xARow = x+60;
+        xARow = x + x/2;
         yARow = y+60; 
 
         int xZRow,yZRow;
@@ -162,22 +162,26 @@ public class Hangman extends World
         F f = new F();
         addObject(f,x+60*3, y);
         f.setLocation(x+60*3,y);
+        
+        G g = new G();
+        addObject(g,x+60*4, y);
+        g.setLocation(x+60*4,y);
 
         H h = new H();
-        addObject(h, x+60*4, y);
-        h.setLocation(x+60*4, y);
+        addObject(h, x+60*5, y);
+        h.setLocation(x+60*5, y);
 
         J j = new J();
-        addObject(j,x+60*5,y);
-        j.setLocation(x+60*5,y);
+        addObject(j,x+60*6,y);
+        j.setLocation(x+60*6,y);
 
         K k = new K();
-        addObject(k, x+60*6,y);
-        k.setLocation(x+60*6,y);
+        addObject(k, x+60*7,y);
+        k.setLocation(x+60*7,y);
 
         L l = new L();
-        addObject(l,x+60*7,y);
-        l.setLocation(x+60*7,y);
+        addObject(l,x+60*8,y);
+        l.setLocation(x+60*8,y);
     }
 
     public void addZRow(int x,int y)
