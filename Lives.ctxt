@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=world\ noOfLives
+comment0.target=void\ updateNoOfLives(greenfoot.World,\ int)
+comment1.params=
+comment1.target=Lives()
+comment2.params=
+comment2.target=void\ act()
+numComments=3
