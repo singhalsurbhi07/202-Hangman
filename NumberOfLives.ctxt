@@ -1,5 +1,13 @@
 #BlueJ class context
-comment0.params=
-comment0.target=void\ act()
-comment0.text=\n\ Act\ -\ do\ whatever\ the\ NumberOfLives\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-numComments=1
+comment0.params=count
+comment0.target=NumberOfLives(int)
+comment1.params=noOfLives
+comment1.target=void\ setNoOfLives(int)
+comment2.params=
+comment2.target=int\ getNoOfLives()
+comment3.params=
+comment3.target=int\ updateNumberOfLives()
+comment4.params=
+comment4.target=void\ act()
+comment4.text=\n\ Act\ -\ do\ whatever\ the\ NumberOfLives\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+numComments=5

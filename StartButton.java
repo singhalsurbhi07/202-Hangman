@@ -11,6 +11,7 @@ public class StartButton extends Actor
     StartScreen startScreen;
     AnimalCategoryButton animalCategoryButton;
     SelectMessage selectMessage = new SelectMessage();
+    
 
     public StartButton(StartScreen startScreen, AnimalCategoryButton animalCategoryButton) {
         this.startScreen = startScreen;
@@ -38,6 +39,7 @@ public class StartButton extends Actor
                 String word = wordList.getWord();
                 if (word != null) {
                     Greenfoot.setWorld(new Hangman(word));    
+                    Quit.letterCount = 0;
                 } else {
                     // display error message ex db down
                 }

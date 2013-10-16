@@ -16,6 +16,10 @@ public class WordToGuess extends Actor
   private String word;  
   private int indexOfAlphabet;
   World world;
+  int letterCount;
+  Lives lives = new Lives();
+  //private int noOfLives=5;
+ 
   
   public WordToGuess(){
       
@@ -27,6 +31,7 @@ public class WordToGuess extends Actor
         // Add your action code here.
     }    
    
+
     
     public void setAlphabetGuessed(String alphabet, World w)
     {
@@ -51,6 +56,8 @@ public class WordToGuess extends Actor
              if(arr[j]== i){
                 
                 System.out.println("inside draw");
+                letterCount = Quit.updateLetterCount();
+               // System.out.println("The filled number of letters are : " + letterCount);
                 Message message = new Message(alphabet);
                 world.addObject(message, xAlpha,yAlpha-20);
                 j++;
@@ -75,8 +82,9 @@ public class WordToGuess extends Actor
 
                 if((index =word.indexOf(alphabet, pos))!= -1){
                     System.out.println("inside if");
-                    alphabetPosition[++size]= index;
+                     alphabetPosition[++size]= index;
                     pos=index+1;
+                    System.out.println("index, size, pos : " + index + " "+ size + " " + pos );
                 }
                 else
                     break;
@@ -87,11 +95,32 @@ public class WordToGuess extends Actor
             if(size != -1){
                 placeGuessedAlphabet(alphabet, alphabetPosition, size+1);
                 System.out.println("leter there");
+                System.out.println("The filled number of letters are : " + letterCount);
+                if(word.length()==letterCount)
+                {
+                    System.out.println("Yayy!!!! You won!!!");
+                    Won_Message msg_won = new Won_Message();
+                    world.addObject(msg_won, 800, 180);
+                    Greenfoot.delay(100);
+                    Greenfoot.setWorld(new StartScreen());
+                }
+                
             }
             else
+            {
                 System.out.println("Letter is not present");
-           
+                calculateLives();
+                
+            }
+        }
         
+        public void calculateLives()
+        {
+                int noOfLives = NumberOfLives.updateNumberOfLives();
+                System.out.println("Number of lives in wordtoguess after updation is : "+ noOfLives);
+                if(noOfLives>=0)
+                lives.updateNoOfLives(world,noOfLives);
+              
         }
     }
     

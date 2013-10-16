@@ -11,13 +11,14 @@ public class Hangman extends World
     int xStart,yStart;
     int wordLength;
     WordToGuess wordtoguess;
-
+    
     private String word;
     /**
      * Constructor for objects of class Hangman.
      * 
      */
 
+   
     public Hangman(String word)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -65,15 +66,25 @@ public class Hangman extends World
         System.out.println("The length of the word is " + word.length());
 
         
-        System.out.println("The length of the word is " + word.length());
+      //  System.out.println("The length of the word is " + word.length());
 
         placeDash();
 
         addAlphabets(xStart,yStart+150);
 
         Title title = new Title();
-        addObject(title, 132, 52);
-        title.setLocation(114, 81);
+        addObject(title, 114, 81);
+      //  title.setLocation(114, 81);
+        
+       NumberOfLives lives = new NumberOfLives(5);
+       addObject(lives, 700, 40);
+       lives.setLocation(700, 40);
+       
+       addLives();
+       
+       Quit quit = new Quit();
+       addObject(quit, 840, 340);
+       
        /* wordtoguess = new WordToGuess();
         addObject(wordtoguess, 661, 77);
         wordtoguess.setLocation(609, 151);
@@ -81,7 +92,21 @@ public class Hangman extends World
         wordtoguess.setLocation(862, 217);
         wordtoguess.setLocation(844, 224);*/
     }
+   
 
+    public void addLives()
+    {
+      Lives1 lives1 = new Lives1();
+      addObject(lives1,780,40);
+      Lives2 lives2 = new Lives2();
+      addObject(lives2,810,40);
+      Lives3 lives3 = new Lives3();
+      addObject(lives3,840,40);
+      Lives4 lives4 = new Lives4();
+      addObject(lives4,870,40);
+      Lives5 lives5 = new Lives5();
+      addObject(lives5,900,40);
+    }
     public void addAlphabets(int x, int y) {
         int xQRow,yQRow;
         xQRow = x;
