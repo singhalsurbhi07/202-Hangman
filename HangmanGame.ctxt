@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=no
+comment0.target=void\ setNoOfLives(int)
+comment1.params=state
+comment1.target=void\ setState(iHangmanState)
+comment2.params=
+comment2.target=void\ setLetterCount()
+comment3.params=
+comment3.target=int\ updateLetterCount()
+comment4.params=
+comment4.target=int\ updateNumberOfLives()
+comment5.params=
+comment5.target=iHangmanState\ getGameStartedState()
+comment6.params=
+comment6.target=iHangmanState\ getGameEndedState()
+comment7.params=
+comment7.target=iHangmanState\ getLetterGuessedState()
+comment8.params=
+comment8.target=iHangmanState\ getLetterNotGuessedState()
+numComments=9
