@@ -30,8 +30,12 @@ public class StartScreen extends World
     private void prepare()
     {
         AnimalCategoryButton animalCategoryButton = new AnimalCategoryButton();
-        addObject(new StartButton(this, animalCategoryButton), 452,350);
-        addObject(animalCategoryButton, 150, 220);
+        FlowerCategoryButton flowerCategoryButton = new FlowerCategoryButton();
+        PlacesCategoryButton placesCategoryButton = new PlacesCategoryButton();
+        addObject(new StartButton(this, animalCategoryButton, flowerCategoryButton, placesCategoryButton), 452,350);
+        addObject(animalCategoryButton, 130, 140);
+        addObject(flowerCategoryButton, 130, 190);
+        addObject(placesCategoryButton, 130, 240);
     }
 
    

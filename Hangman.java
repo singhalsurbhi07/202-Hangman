@@ -48,7 +48,7 @@ public class Hangman extends World
       { 
          Dash dash = new Dash();
          addObject(dash,xDash,yDash);
-         dash.setLocation(xDash, yDash);
+       //  dash.setLocation(xDash, yDash);
          xDash+=70;
       }
    }
@@ -76,37 +76,39 @@ public class Hangman extends World
         addObject(title, 114, 81);
       //  title.setLocation(114, 81);
         
-       NumberOfLives lives = new NumberOfLives(5);
-       addObject(lives, 700, 40);
-       lives.setLocation(700, 40);
+        Message msg = new Message();
+        msg.setScale(110,20);
+        msg.drawMessage("Number of Lives");
+      // NumberOfLives lives = new NumberOfLives();
+       addObject(msg, 700, 40);
+       //lives.setLocation(700, 40);
+       
+       HangmanGame.setNoOfLives(5);
+       HangmanGame.setLetterCount();
        
        addLives();
        
        Quit quit = new Quit();
        addObject(quit, 840, 340);
        
-       /* wordtoguess = new WordToGuess();
-        addObject(wordtoguess, 661, 77);
-        wordtoguess.setLocation(609, 151);
-
-        wordtoguess.setLocation(862, 217);
-        wordtoguess.setLocation(844, 224);*/
+      
     }
    
 
     public void addLives()
     {
-      Lives1 lives1 = new Lives1();
-      addObject(lives1,780,40);
-      Lives2 lives2 = new Lives2();
-      addObject(lives2,810,40);
-      Lives3 lives3 = new Lives3();
-      addObject(lives3,840,40);
-      Lives4 lives4 = new Lives4();
-      addObject(lives4,870,40);
-      Lives5 lives5 = new Lives5();
-      addObject(lives5,900,40);
+      int xLives= 780;
+      int yLives= 40;
+      
+      for(int i=0;i<5;i++){
+          Lives lives = new Lives();
+          addObject(lives, xLives, yLives);
+          xLives+=30;
+      }
+            
     }
+    
+    
     public void addAlphabets(int x, int y) {
         int xQRow,yQRow;
         xQRow = x;

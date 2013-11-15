@@ -10,12 +10,27 @@ public class StartButton extends Actor
 {
     StartScreen startScreen;
     AnimalCategoryButton animalCategoryButton;
-    SelectMessage selectMessage = new SelectMessage();
-    
+    FlowerCategoryButton flowerCategoryButton;
+    PlacesCategoryButton placesCategoryButton;
+    //SelectMessage selectMessage = new SelectMessage();
 
-    public StartButton(StartScreen startScreen, AnimalCategoryButton animalCategoryButton) {
+    iHangmanState gameEnded = new GameEnded();
+    iHangmanState state;
+
+    
+    
+    public StartButton(StartScreen startScreen, AnimalCategoryButton animalCategoryButton, FlowerCategoryButton flowerCategoryButton,
+    PlacesCategoryButton placesCategoryButton) {
         this.startScreen = startScreen;
         this.animalCategoryButton = animalCategoryButton;
+        this.flowerCategoryButton = flowerCategoryButton;
+        this.placesCategoryButton = placesCategoryButton;
+       
+        // Initial state of the game is game ended
+        HangmanGame.setState(gameEnded);
+        HangmanGame.setLetterCount();
+
+        
     }
 
     public StartButton() {
@@ -24,25 +39,57 @@ public class StartButton extends Actor
 
     public void act() 
     {
-
+        this.state=HangmanGame.currentState;
         if(Greenfoot.mouseClicked(this)){
-
-            if (!animalCategoryButton.isAnimalBtnClicked()) {
-                System.out.println("Not Selected the Animal Category");
-                startScreen.addObject(selectMessage, 420, 230);
+            HangmanGame.letterCount=0;
+            Greenfoot.playSound("buttonClick.mp3");
+            if (!animalCategoryButton.isAnimalBtnClicked() && !flowerCategoryButton.isFlowerBtnClicked() && !placesCategoryButton.isPlacesBtnClicked()) {
+                System.out.println("Not Selected any Category");
+                
+                Message msg = new Message();
+                    msg.setScale(180,20);
+                    msg.drawMessage("Please select a category");
+                    //Won_Message msg_won = new Won_Message();
+                    startScreen.addObject(msg, 450, 300);
+                //startScreen.addObject(selectMessage, 420, 230);
                 Greenfoot.delay(60);
-                startScreen.removeObject(selectMessage);
-            } else {
+                startScreen.removeObject(msg);
+            } else if (animalCategoryButton.isAnimalBtnClicked()){
                 //WordList.clearWord();
-                System.out.println("Clicked the Start Button");
+                System.out.println("Clicked the Start Button after selecting animal category");
                 WordList wordList  = animalCategoryButton.getWordList();   
                 String word = wordList.getWord();
                 if (word != null) {
-                    Greenfoot.setWorld(new Hangman(word));    
-                    Quit.letterCount = 0;
+                    
+                    state.startButtonPressed(word);
+                   
                 } else {
-                    // display error message ex db down
+                    System.out.println("DB is down");
                 }
+            }else if (flowerCategoryButton.isFlowerBtnClicked()){
+                System.out.println("Clicked the Start Button after selecting flower category");
+                WordList wordList  = flowerCategoryButton.getWordList();   
+                String word = wordList.getWord();
+                if (word != null) {
+                   
+                    state.startButtonPressed(word);
+                   
+                } else {
+                    System.out.println("DB is down");
+                }
+
+            }else{
+                System.out.println("Clicked the Start Button after selecting places category");
+                WordList wordList  = placesCategoryButton.getWordList();   
+                String word = wordList.getWord();
+                if (word != null) {
+                   
+                   state.startButtonPressed(word);
+                   
+                } else {
+                    System.out.println("DB is down");
+                }
+
             }
         }
     }

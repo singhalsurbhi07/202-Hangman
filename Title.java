@@ -15,8 +15,8 @@ public class Title extends Actor
     public Title()
     {
       GreenfootImage img = new GreenfootImage(200,100);
-      img.drawString("Guess the Animal",10, 10);
-      setImage(img); 
+      img.drawString("Guess the Word",10, 10);
+      setImage(img);
     }
     
     public void act() 

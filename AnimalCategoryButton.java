@@ -19,10 +19,12 @@ public class AnimalCategoryButton extends Actor
     public void act() 
     {
         if(Greenfoot.mouseClicked(this)){
+            Greenfoot.playSound("buttonClick.mp3");
             
             System.out.println("Selected Animal Category");
             //Have to send the category name to WordList class
             wordList  = new WordList("Animal");
+            
             animalBtnClicked = true;
         }
     } 

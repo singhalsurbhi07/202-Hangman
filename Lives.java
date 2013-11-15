@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.*;
 
 /**
  * Write a description of class Label_Lives here.
@@ -13,33 +14,25 @@ public class Lives extends Actor
     {
       String lives = "Lives" + noOfLives;
       System.out.println("The lives object is : " + lives);
-      int noOfLivesRemaining = noOfLives + 1;
-      switch(noOfLivesRemaining)
+      
+      List livesList = world.getObjects(Lives.class);
+      if(!livesList.isEmpty())
       {
-        case 1:
-        world.removeObjects(world.getObjects(Lives1.class));
-        Lives_Message msg = new Lives_Message();
+          int size= livesList.size();
+          world.removeObject((Actor)livesList.get(size-1));
+      }
+      
+            
+      if(noOfLives==0){
+        Message msg = new Message();
+        msg.setScale(300,40);
+        msg.drawMessage("All your lives are lost!!\n Game Over!!!");
+       // Lives_Message msg = new Lives_Message();
         world.addObject(msg, 800, 180);
         Greenfoot.delay(100);
-        Greenfoot.setWorld(new StartScreen());
-        break;
-         case 2:
-        world.removeObjects(world.getObjects(Lives2.class));
-        break;
-         case 3:
-        world.removeObjects(world.getObjects(Lives3.class));
-        break;
-         case 4:
-        world.removeObjects(world.getObjects(Lives4.class));
-        break;
-         case 5:
-        world.removeObjects(world.getObjects(Lives5.class));
-        break;
       }
-     // world.removeObjects(world.getObjects(Lives1.class));
-      //world.removeObjects(world.getObjects(live.class));
-     
     }
+     
 
     public Lives()
     {

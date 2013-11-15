@@ -13,10 +13,11 @@ public class JDBCConnection extends Actor
     Connection getConnection() {
     //See your driver documentation for the proper format of this string :
     String DB_CONN_STRING = "jdbc:mysql://54.235.83.253:3306/WordsDB";
-    //Provided by your driver documentation. In this case, a MySql driver is used : 
+    //Provided by your driver documentation. In this case, a MySql driver is used :
     String DRIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
     String USER_NAME = "sjsu202";
     String PASSWORD = "sjsu";
+
     
     Connection result = null;
     try {

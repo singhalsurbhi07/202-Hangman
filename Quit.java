@@ -8,13 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Quit extends Actor
 {
-    static int letterCount;
-    
-    public static int updateLetterCount()
-    {
-        letterCount++;
-        return letterCount;
-    }
+   
     /**
      * Act - do whatever the Quit wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -23,7 +17,9 @@ public class Quit extends Actor
     {
         if(Greenfoot.mouseClicked(this)){
             
-            Greenfoot.setWorld(new StartScreen());
+                 iHangmanState state = HangmanGame.currentState;
+                 state.quit();
+                  
         }
 
         // Add your action code here.
